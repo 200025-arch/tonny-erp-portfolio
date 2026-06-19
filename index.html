@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tonny Mvoumbi — Consultant ERP</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+.perim-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.perim-card{background:#18172E;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;transition:border-color .25s}
+.perim-card[data-color="purple"]{--pc:#7C3AED;--pc-bg:rgba(124,58,237,.12)}
+.perim-card[data-color="green"]{--pc:#059669;--pc-bg:rgba(5,150,105,.12)}
+.perim-card[data-color="orange"]{--pc:#EA580C;--pc-bg:rgba(234,88,12,.12)}
+.perim-card[data-color="pink"]{--pc:#DB2777;--pc-bg:rgba(219,39,119,.12)}
+.perim-card[data-color="blue"]{--pc:#2563EB;--pc-bg:rgba(37,99,235,.12)}
+.perim-card[data-color="teal"]{--pc:#0D9488;--pc-bg:rgba(13,148,136,.12)}
+.perim-card.open{border-color:var(--pc)}
+.perim-header{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:1rem;padding:1.1rem 1.3rem;color:#EEE9FF;font-family:'Inter','Segoe UI',sans-serif;text-align:left;transition:background .2s}
+.perim-header:hover{background:rgba(255,255,255,.03)}
+.perim-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.perim-title-wrap{display:flex;flex-direction:column;gap:.1rem;flex:1}
+.perim-num{font-size:.68rem;font-weight:700;color:var(--pc);letter-spacing:.08em}
+.perim-name{font-size:.92rem;font-weight:700;line-height:1.2}
+.perim-chevron{font-size:1rem;color:#8B82B8;transition:transform .3s ease;flex-shrink:0}
+.perim-card.open .perim-chevron{transform:rotate(180deg);color:var(--pc)}
+.perim-body{padding:0 1.3rem;border-top:1px solid rgba(255,255,255,.08);max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.perim-card.open .perim-body{max-height:600px;padding-top:1rem;padding-bottom:1.3rem}
+.perim-group{margin-bottom:.9rem}
+.perim-group:last-child{margin-bottom:0}
+.perim-group-title{font-size:.72rem;font-weight:700;color:var(--pc);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem}
+.perim-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.perim-tags span{font-size:.75rem;font-weight:500;padding:.25rem .65rem;border-radius:6px;background:var(--pc-bg);color:#EEE9FF;border:1px solid rgba(255,255,255,.07)}
+@media(max-width:700px){.perim-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV ════ -->
+<nav>
+  <a href="#" class="nav-logo">TM · ERP</a>
+  <ul class="nav-links">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#perimetre">Périmètre</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Travaillons ensemble →</a>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section class="hero" id="accueil">
+
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Disponible pour de nouveaux projets
+  </div>
+
+  <h1>Tonny <span>Mvoumbi</span></h1>
+
+  <p class="hero-sub">
+    <strong>Consultant ERP</strong> — j'implémente des solutions ERP,
+    optimise les processus métier et pilote la transformation digitale des entreprises.
+  </p>
+
+  <div class="hero-tags">
+    <span class="tag tag-purple">Odoo</span>
+    <span class="tag tag-pink">Axelor</span>
+    <span class="tag tag-green">Business Process</span>
+    <span class="tag tag-gray">Data & BI</span>
+    <span class="tag tag-gray">Change Management</span>
+    <span class="tag tag-orange">Gestion Commerciale</span>
+    <span class="tag tag-green">Gestion Financière</span>
+    <span class="tag tag-purple">Stocks & Logistique</span>
+    <span class="tag tag-pink">Production</span>
+    <span class="tag tag-gray">Gestion Projet</span>
+    <span class="tag tag-orange">Ressource Humaine</span>
+    <span class="tag tag-green">Service & Support</span>
+    <span class="tag tag-purple">Administration & Référentiels</span>
+  </div>
+
+  <div class="hero-btns">
+    <a href="#expertise" class="btn-primary">Mon expertise</a>
+    <a href="#perimetre" class="btn-primary">Périmètre ERP</a>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Défiler
+  </div>
+
+</section>
+
+<!-- ════ À PROPOS ════ -->
+<section id="apropos">
+  <div class="about-grid">
+
+    <!-- Carte identité -->
+    <div class="about-id-card">
+      <div class="about-id-top">
+        <div class="avatar">TM</div>
+        <div>
+          <p class="about-id-name">Tonny Mvoumbi</p>
+          <p class="about-id-role">Consultant ERP · Implémentation & Optimisation</p>
+        </div>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-item">
+          <span class="stat-num">2</span>
+          <span class="stat-lbl">Ans d'expérience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-lbl">Projets livrés</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">8+</span>
+          <span class="stat-lbl">Clients satisfaits</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">3+</span>
+          <span class="stat-lbl">Modules maîtrisés</span>
+        </div>
+      </div>
+
+      <div style="padding: .5rem 1.5rem 1.2rem">
+        <div class="success-pill">✓ Projets livrés dans les délais</div>
+      </div>
+    </div>
+
+    <!-- Texte -->
+    <div class="about-text">
+      <div class="section-eyebrow">À propos</div>
+      <h2 class="section-title">Consultant ERP <span>orienté résultats</span></h2>
+
+      <p>
+        Passionné par la <strong>transformation des organisations</strong>, j'accompagne les entreprises
+        dans le déploiement de systèmes ERP pour centraliser leurs données, automatiser leurs processus
+        et gagner en performance opérationnelle.
+      </p>
+      <p>
+        Mon approche combine une solide compréhension des <strong>processus métier</strong> avec une
+        maîtrise technique des plateformes ERP et outils BI connectés.
+      </p>
+      <p>
+        De l'analyse des besoins au déploiement final, je veille à ce que chaque solution soit
+        <strong>adaptée, adoptée, scalable et alignée</strong> avec la stratégie de votre entreprise.
+      </p>
+
+      <div class="skills-wrap">
+        <span class="skill-chip">Odoo 16/17</span>
+        <span class="skill-chip">Axelor</span>
+        <span class="skill-chip">Power BI</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">Excel avancé</span>
+        <span class="skill-chip">BPMN</span>
+        <span class="skill-chip">Change Management</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ EXPERTISE ════ -->
+<section id="expertise" class="expertise-bg">
+  <div class="section-eyebrow">Ce que je fais</div>
+  <h2 class="section-title">Mon <span>expertise</span></h2>
+  <p class="section-desc">De l'audit initial à la mise en production, j'interviens à chaque étape de votre projet ERP.</p>
+
+  <div class="expertise-grid">
+
+    <div class="exp-card">
+      <div class="exp-bar" style="background:linear-gradient(90deg,#7C3AED,#DB2777)"></div>
+      <div class="exp-icon-box" style="background:rgba(124,58,237,.15)">🔍</div>
+      <h3>Analyse fonctionnelle</h3>
+      <p>Recueil des besoins métier, rédaction des spécifications et modélisation des processus AS-IS / TO-BE pour identifier les écarts avec le standard ERP.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Interviews</span>
+        <span class="exp-tag">Cahier des charges</span>
+        <span class="exp-tag">BPMN / UML</span>
+        <span class="exp-tag">Gap analysis</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-bar" style="background:linear-gradient(90deg,#059669,#0d9488)"></div>
+      <div class="exp-icon-box" style="background:rgba(5,150,105,.15)">🎯</div>
+      <h3>Ateliers métiers</h3>
+      <p>Animation de workshops par domaine avec les key users, validation des processus cibles et arbitrage entre parties prenantes (DSI, métiers, direction).</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Workshops</span>
+        <span class="exp-tag">Key users</span>
+        <span class="exp-tag">Parties prenantes</span>
+        <span class="exp-tag">Décision</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-bar" style="background:linear-gradient(90deg,#EA580C,#EAB308)"></div>
+      <div class="exp-icon-box" style="background:rgba(234,88,12,.15)">⚙️</div>
+      <h3>Paramétrage</h3>
+      <p>Configuration de l'ERP selon les spécifications validées (workflows, règles de gestion, droits d'accès), tests unitaires et documentation du paramétrage.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Odoo</span>
+        <span class="exp-tag">Axelor</span>
+        <span class="exp-tag">Workflows</span>
+        <span class="exp-tag">Tests unitaires</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-bar" style="background:linear-gradient(90deg,#DB2777,#7C3AED)"></div>
+      <div class="exp-icon-box" style="background:rgba(219,39,119,.15)">🗄️</div>
+      <h3>Reprise de données</h3>
+      <p>Cartographie des données sources, définition des règles de mapping, data cleansing et contrôles de cohérence post-migration (SQL / dbt).</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Mapping</span>
+        <span class="exp-tag">Data cleansing</span>
+        <span class="exp-tag">SQL</span>
+        <span class="exp-tag">dbt</span>
+        <span class="exp-tag">Migration</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-bar" style="background:linear-gradient(90deg,#7C3AED,#059669)"></div>
+      <div class="exp-icon-box" style="background:rgba(124,58,237,.12)">✅</div>
+      <h3>Recette</h3>
+      <p>Rédaction des cahiers de tests, tests fonctionnels et d'intégration, recette utilisateur (UAT), suivi des anomalies et validation du Go / No-Go.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">UAT</span>
+        <span class="exp-tag">Bug tracking</span>
+        <span class="exp-tag">Non-régression</span>
+        <span class="exp-tag">PV de recette</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-bar" style="background:linear-gradient(90deg,#EAB308,#EA580C)"></div>
+      <div class="exp-icon-box" style="background:rgba(234,179,8,.15)">🤝</div>
+      <h3>Formation utilisateurs</h3>
+      <p>Conception de supports par profil, animation de sessions (présentiel / distanciel), accompagnement au changement et support post-déploiement.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Supports pédagogiques</span>
+        <span class="exp-tag">Change management</span>
+        <span class="exp-tag">Hotline</span>
+        <span class="exp-tag">FAQ</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ PÉRIMÈTRE FONCTIONNEL ════ -->
+<section id="perimetre">
+  <div class="section-eyebrow">Couverture fonctionnelle</div>
+  <h2 class="section-title">Périmètre <span>ERP maîtrisé</span></h2>
+  <p class="section-desc">10 domaines fonctionnels couverts — cliquez sur un domaine pour voir le détail des modules.</p>
+
+  <div class="perim-grid">
+
+    <!-- 1 -->
+    <div class="perim-card" data-color="purple">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(124,58,237,.15)">🤝</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">01</span>
+          <span class="perim-name">Gestion Commerciale</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">CRM</p>
+          <div class="perim-tags"><span>Prospects</span><span>Opportunités</span><span>Pipeline</span><span>Activités</span><span>Historique</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Ventes</p>
+          <div class="perim-tags"><span>Devis</span><span>Commandes clients</span><span>Tarification</span><span>Contrats</span><span>Facturation</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Achats</p>
+          <div class="perim-tags"><span>Demandes d'achats</span><span>Appels d'offres</span><span>Commandes fournisseurs</span><span>Réceptions</span><span>Factures fournisseurs</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="perim-card" data-color="green">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(5,150,105,.15)">💰</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">02</span>
+          <span class="perim-name">Gestion Financière</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">Comptabilité Générale</p>
+          <div class="perim-tags"><span>Journal</span><span>Grand livre</span><span>Balance</span><span>Écritures</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Comptabilité Auxiliaire</p>
+          <div class="perim-tags"><span>Clients</span><span>Fournisseurs</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Trésorerie</p>
+          <div class="perim-tags"><span>Gestion bancaire</span><span>Rapprochement</span><span>Prévisions</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Immobilisations</p>
+          <div class="perim-tags"><span>Actifs</span><span>Amortissements</span><span>Cessions</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Contrôle de Gestion</p>
+          <div class="perim-tags"><span>Budgets</span><span>Centres de coûts</span><span>Analyse des écarts</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="perim-card" data-color="orange">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(234,88,12,.15)">📦</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">03</span>
+          <span class="perim-name">Stocks & Logistique</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">Gestion des Stocks</p>
+          <div class="perim-tags"><span>Entrées/sorties</span><span>Inventaires</span><span>Valorisation</span><span>Multi-entrepôts</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">WMS</p>
+          <div class="perim-tags"><span>Emplacements</span><span>Préparation</span><span>Picking</span><span>Expédition</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Transport</p>
+          <div class="perim-tags"><span>Suivi livraisons</span><span>Transporteurs</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="perim-card" data-color="pink">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(219,39,119,.15)">⚙️</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">04</span>
+          <span class="perim-name">Production</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">Gestion de Production</p>
+          <div class="perim-tags"><span>Ordres de fabrication</span><span>Nomenclatures (BOM)</span><span>Gammes opératoires</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Planification MRP</p>
+          <div class="perim-tags"><span>Calcul des besoins</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Suivi Atelier</p>
+          <div class="perim-tags"><span>Temps passés</span><span>Consommations</span><span>Rendements</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Qualité</p>
+          <div class="perim-tags"><span>Contrôles</span><span>Non-conformités</span><span>Actions correctives</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="perim-card" data-color="blue">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(37,99,235,.15)">📋</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">05</span>
+          <span class="perim-name">Gestion de Projet</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">Projets</p>
+          <div class="perim-tags"><span>Planification</span><span>Tâches</span><span>Jalons</span><span>Ressources</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Temps</p>
+          <div class="perim-tags"><span>Feuilles de temps</span><span>Pointage</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Facturation Projet</p>
+          <div class="perim-tags"><span>Au forfait</span><span>Au temps passé</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="perim-card" data-color="teal">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(13,148,136,.15)">👥</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">06</span>
+          <span class="perim-name">Ressources Humaines</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">Administration</p>
+          <div class="perim-tags"><span>Dossiers salariés</span><span>Contrats</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Congés & Absences</p>
+          <div class="perim-tags"><span>Demandes</span><span>Validation</span><span>Soldes</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Notes de Frais</p>
+          <div class="perim-tags"><span>Saisie</span><span>Validation</span><span>Remboursement</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Formation & Recrutement</p>
+          <div class="perim-tags"><span>Plan de formation</span><span>Compétences</span><span>Candidatures</span><span>Entretiens</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Paie</p>
+          <div class="perim-tags"><span>Bulletins</span><span>Déclarations sociales</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="perim-card" data-color="orange">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(234,88,12,.15)">🔧</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">07</span>
+          <span class="perim-name">Service & Support</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">SAV</p>
+          <div class="perim-tags"><span>Tickets</span><span>Interventions</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Maintenance</p>
+          <div class="perim-tags"><span>Préventive</span><span>Corrective</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Contrats de Service</p>
+          <div class="perim-tags"><span>Contrats</span><span>Renouvellements</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="perim-card" data-color="purple">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(124,58,237,.15)">📁</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">08</span>
+          <span class="perim-name">Gestion Documentaire</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">Documents</p>
+          <div class="perim-tags"><span>Stockage</span><span>Versioning</span><span>Validation</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Workflow</p>
+          <div class="perim-tags"><span>Circuits d'approbation</span><span>Notifications</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="perim-card" data-color="pink">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(219,39,119,.15)">📊</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">09</span>
+          <span class="perim-name">Business Intelligence</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">Reporting</p>
+          <div class="perim-tags"><span>Tableaux de bord</span><span>KPI</span><span>Statistiques</span><span>Exports</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Data Visualisation</p>
+          <div class="perim-tags"><span>Graphiques</span><span>Indicateurs temps réel</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="perim-card" data-color="blue">
+      <button class="perim-header" aria-expanded="false">
+        <div class="perim-icon" style="background:rgba(37,99,235,.15)">⚡</div>
+        <div class="perim-title-wrap">
+          <span class="perim-num">10</span>
+          <span class="perim-name">Administration & Référentiels</span>
+        </div>
+        <span class="perim-chevron">▾</span>
+      </button>
+      <div class="perim-body">
+        <div class="perim-group">
+          <p class="perim-group-title">Utilisateurs</p>
+          <div class="perim-tags"><span>Comptes</span><span>Rôles</span><span>Permissions</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Référentiels</p>
+          <div class="perim-tags"><span>Clients</span><span>Fournisseurs</span><span>Produits</span><span>Articles</span></div>
+        </div>
+        <div class="perim-group">
+          <p class="perim-group-title">Paramétrage</p>
+          <div class="perim-tags"><span>Configuration ERP</span><span>Personnalisation</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section id="contact" class="contact-bg">
+  <div class="contact-inner">
+
+    <div class="contact-header">
+      <div class="section-eyebrow">Contact</div>
+      <h2 class="section-title">Discutons de votre <span>projet ERP</span></h2>
+      <p class="section-desc">Déploiement, migration, optimisation ou formation — parlons-en.</p>
+    </div>
+
+    <div class="contact-links">
+      <a href="mailto:mvoumbitony561@gmail.com" class="contact-link-card">
+        <div class="cl-icon" style="background:rgba(124,58,237,.15)">📧</div>
+        <strong>Email</strong>
+        <span>mvoumbitony561@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/tonny-mvoumbi/" target="_blank" class="contact-link-card">
+        <div class="cl-icon" style="background:rgba(5,150,105,.15)">💼</div>
+        <strong>LinkedIn</strong>
+        <span>Tonny Mvoumbi</span>
+      </a>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Prénom & Nom</label>
+          <input type="text" placeholder="Jean Dupont"/>
+        </div>
+        <div class="form-group">
+          <label>Email professionnel</label>
+          <input type="email" placeholder="jean@entreprise.com"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Sujet</label>
+        <input type="text" placeholder="Objet de votre message"/>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Décrivez votre projet ERP, votre secteur, vos besoins..."></textarea>
+      </div>
+      <button class="btn-send" id="sendBtn">Envoyer le message →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <p>© 2026 <a href="#">Tonny Mvoumbi</a> · Consultant ERP · Tous droits réservés</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.perim-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.perim-card');
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.perim-card.open').forEach(c => c.classList.remove('open'));
+      if (!isOpen) card.classList.add('open');
+    });
+  });
+
+  const links = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id]');
+
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+  });
+
+  document.getElementById('sendBtn').addEventListener('click', function() {
+    this.textContent = '✓ Message envoyé !';
+    this.style.background = 'linear-gradient(135deg,#059669,#0d9488)';
+    setTimeout(() => {
+      this.textContent = 'Envoyer le message →';
+      this.style.background = '';
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>
